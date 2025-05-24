@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>INJECT GENERATOR SLOT ULTRASPIN88</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #00ff88;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 18px;
+      width: 90%;
+      max-width: 300px;
+      background: #1e1e1e;
+      border: 1px solid #00ff88;
+      color: #00ff88;
+      border-radius: 10px;
+    }
+    button {
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #00ff88;
+      color: #000;
+    }
+    #hasil {
+      margin-top: 30px;
+      padding: 15px;
+      border: 1px dashed #00ff88;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .loader {
+      display: none;
+      margin-top: 20px;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #ccc;
+    }
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🔧 INJECT GENERATOR SLOT ULTRASPIN88</h1>
+
+  <input type="text" id="namaId" placeholder="NAMA ID"><br>
+  <input type="number" id="saldo" placeholder="ISI SALDO"><br>
+  <button onclick="inject()">INJECT</button>
+
+  <div class="loader" id="loader">
+    <p>🔄 Proses Inject sedang berjalan...</p>
+  </div>
+
+  <div id="hasil"></div>
+
+  <div class="footer">
+    <p><strong>NOTE:</strong> Otomatis Active Setelah Deposit, Cukup Sekali INJECT</p>
+    <p>-----------------------------</p>
+    <p>ADMIN: <strong>SASILA</strong></p>
+  </div>
+
+  <audio id="injectSound" src="https://www.soundjay.com/button/sounds/button-3.mp3" preload="auto"></audio>
+
+  <script>
+    function inject() {
+      const namaId = document.getElementById('namaId').value.trim();
+      const saldo = document.getElementById('saldo').value.trim();
+      const hasil = document.getElementById('hasil');
+      const loader = document.getElementById('loader');
+      const sound = document.getElementById('injectSound');
+
+      if (!namaId || !saldo) {
+        hasil.innerHTML = "<p style='color:red;'>⚠️ Harap isi Nama ID dan Saldo terlebih dahulu.</p>";
+        return;
+      }
+
+      hasil.innerHTML = "";
+      loader.style.display = 'block';
+      sound.play();
+
+      setTimeout(() => {
+        loader.style.display = 'none';
+        hasil.innerHTML = `
+          <p>✅ Inject Berhasil ke ID <strong>${namaId}</strong></p>
+          <p>Jumlah Saldo: <strong>Rp ${parseInt(saldo).toLocaleString()}</strong></p>
+          <p>Status: <span style="color:lime;">AKTIF</span></p>
+          <p>⚠️ Harap segera deposit untuk aktivasi penuh fitur akun Anda.</p>
+        `;
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
